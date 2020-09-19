@@ -69,7 +69,7 @@ def change_read():
     
 
 def quit_program():
-    ui.message('Thanks and bye!')
+    ui.message('Thank you and good-bye!') # Updated good-bye message to be less casual
 
 
 if __name__ == '__main__':
