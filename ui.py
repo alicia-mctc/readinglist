@@ -24,7 +24,7 @@ def show_books(books):
     """ Display all books in a list of Books, or a 'No books' message
      :param books: the book list """
 
-    # DONE print a blank line before and after the book list or no books message
+    # print a blank line before and after the book list or no books message
 
     if books:
         for book in books:
