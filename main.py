@@ -34,7 +34,10 @@ def create_menu():
 def add_book():
     new_book = ui.get_book_info()
     new_book.save()
-    
+
+#def delete_book():
+    #delete_book = ui.get_book_id()
+    #delete_book.remove()    
 
 def show_read_books():
     read_books = store.get_books_by_read_value(True)
@@ -55,8 +58,7 @@ def search_book():
     search_term = ui.ask_question('Enter search term, will match partial authors or titles.')
     matches = store.book_search(search_term)
     ui.show_books(matches)
-
-
+# Removed blank line.
 def change_read():
 
     book_id = ui.get_book_id()
