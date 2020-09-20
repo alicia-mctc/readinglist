@@ -26,7 +26,7 @@ def create_menu():
     menu.add_option('4', 'Show Read Books', show_read_books)
     menu.add_option('5', 'Show All Books', show_all_books)
     menu.add_option('6', 'Change Book Read Status', change_read)
-    #menu.add_option('7', 'Delete Book', delete_book)
+    menu.add_option('7', 'Delete Book', delete_book)
     menu.add_option('Q', 'Quit', quit_program)
 
     return menu
@@ -36,19 +36,11 @@ def add_book():
     new_book = ui.get_book_info()
     new_book.save()
 
-# @alicia-mctc I took a crack at the delete_book function to try to help you resolve github Issue #7 
-# The chunk below is insufficent by itself, but when comment hastags are removed I get no error warnings
-# so I think it's a step in the right direction.
-# I think most of the heavy lifting for this function is actually done by the _delete_book function in 
-# bookstore.py but I cannot figure out how to get them to talk to each other.
-# Also, I think the _get_book_id Try and Except function in ui.pi is a good template for displaying the
-# error message.
 
-# def delete_book():
-    # search_term = ui.ask_question('Enter book ID: ')
-    # matches = store.book_search(search_term)
-    # ui.show_books(matches)
-# delete_book()
+def delete_book():
+    search_term = ui.ask_question('Enter book ID:   '   ) 
+    matches = store.book_search(search_term)
+    ui.show_books(matches) # Corrected "show_book" to "show_books"
 
 def show_read_books():
     read_books = store.get_books_by_read_value(True)
@@ -80,6 +72,7 @@ def change_read():
     
 
 def quit_program():
+
     ui.message('Thank you and good-bye!') # Updated good-bye message to be less casual
 
 

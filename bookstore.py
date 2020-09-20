@@ -154,7 +154,7 @@ class BookStore:
             delete_all_sql = "DELETE FROM books"
 
             with sqlite3.connect(db) as con:
-                deleted = con.execute(delete_all_sql)
+                deleted = con.execute(delete_all_sql) # VS Code flags as "problem" due to unsued variable
 
             con.close()
            
@@ -192,10 +192,10 @@ class BookStore:
             
             if book_data:
                 book = Book(book_data['title'], book_data['author'], book_data['read'], book_data['rowid'])
-                    
-            con.close()            
-            
-            return book 
+
+            con.close() 
+                  
+            return book,None 
 
 
         def book_search(self, term):
