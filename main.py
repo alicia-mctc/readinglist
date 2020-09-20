@@ -39,7 +39,7 @@ def add_book():
 def delete_book():
     search_term = ui.ask_question('Enter book ID:   '   ) 
     matches = store.book_search(search_term)
-    ui.show_book(matches)
+    ui.show_books(matches) # Corrected "show_book" to "show_books"
     
 
 def show_read_books():
@@ -73,7 +73,7 @@ def change_read():
     
 
 def quit_program():
-    ui.message('Thanks and bye!')
+    ui.message('Thank you and good-bye!')
 
 
 if __name__ == '__main__':
